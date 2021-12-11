@@ -1,0 +1,33 @@
+d8p2 manual decoding notes
+
+acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab | cdfeb fcadb cdfeb cdbaf
+
+
+1: ab
+
+7: dab  -> compare with 1. d == actual A. remaining a/b == actual C/F - unknown which at this point
+
+discovered: A - 1__4__78__
+
+4: eafb -> compare with 1. ignore ab.     remaining e/f == actual B/D - unknown which at this point
+
+0/6/9 (6 len): cefabd / cdfgeb / cagedb - positions of d known, a/b is "known", e/f is "known".
+    remaining = c (len 1 == 9) / cg / cg. 2 instances == actual E. 3 instances == actual G. :. g = actual E. c == actual G
+
+9: cefabd - discovered
+
+discovered: A___E_G - 1__4__789_
+
+last 4 actual C/F and B/D have theoretical knowns. use gained knowledge, plus deduction to figure out which is which
+
+2/3/5 (5 len): cdfbe / gcdfa / fbcad - positions of c,d,g known
+    remaining = fbe / fa / fba. 1 instances = actual B. 3 instances = actual D. :. e = actual B. f = actual D
+
+discovered: AB_DE_G - 1__4__789_
+
+0/6/9 (6 len - take 2): cefabd / cdfgeb / cagedb - positions of c,d,e,f,g. a/b is "known".
+    remaining = ab / b (len 1 == 6) / ab. 1 char remaining = actual F. :. b = actual F. :. outstanding letter a = actual C
+
+6: cdfgeb - discovered
+
+discovered: ABCDEFG - 1__4_6789_
